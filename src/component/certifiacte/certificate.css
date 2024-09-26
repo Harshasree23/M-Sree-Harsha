@@ -6,23 +6,24 @@
 
 .rotate-class{
     width: 100%;
+    height: fit-content;
     margin: 4rem auto;
     /* background-color: aqua; */
-    transform-style: preserve-3d;
-    height: calc( 301px * var(--quantity) );
-    position: relative;
+    /* transform-style: preserve-3d; */
+    /* height: calc( 301px * var(--quantity) ); */
+    /* position: relative; */
 }
 
 
 
 .rotate-slider{
-    position: absolute;
-    text-align: center;
+    /* position: absolute; */
+    /* text-align: center; */
     /* border: .2rem solid yellowgreen; */
-    width: 450px;
-    display: flex;
-    align-items: center;
-    top: 20%;
+    /* width: 450px; */
+    columns:20rem;
+    margin-bottom: 10rem;
+    /* top: 20%;
     --height:300;
     left: calc( 50% - 125px);
     transform-style: preserve-3d;
@@ -31,9 +32,12 @@
     height: calc(var(--apparentSize ));
     transform: perspective( calc(var(--perspectiveDistance) * 1px) );
     animation: rotate both;
-    animation-timeline: view();
-}   
+    -webkit-animation-timeline: view();
+    -moz-animation-timeline: view();
+    animation-timeline: view(); */
 
+}   
+/* 
 @keyframes rotate {
     0%{
         transform: perspective( calc( var(--height) * var(--quantity) * 1px ))
@@ -50,7 +54,7 @@
         translateY( calc( var(--height) * -4px ) )
         rotateY( -360deg );
     }
-}
+} */
 
 
 @media screen and (max-width:600px)
@@ -62,14 +66,16 @@
     }
     .rotate-class{
         margin-top: 10rem;
-        height: calc( 90px * var(--quantity) + 400px );
+        /* height: calc( 90px * var(--quantity) + 400px ); */
     }
     .rotate-slider{
-        width: calc( 60vw + 1rem );
+        display: flex;
+        flex-direction: column;
+        /* width: calc( 60vw + 1rem );
         --height:90;
         --perspectiveDistance : calc( var(--height) * var(--quantity)  );
         --apparentSize : calc(var(--height) * var(--quantity) * (var(--perspectiveDistance) + var(--height)) / var(--perspectiveDistance ) * 1px);
         height: calc(var(--apparentSize ));
-        transform: perspective( calc(var(--perspectiveDistance) * 1px) );
+        transform: perspective( calc(var(--perspectiveDistance) * 1px) ); */
     }
 }

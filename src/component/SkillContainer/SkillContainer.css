@@ -9,7 +9,7 @@
     overflow: hidden;
 
 }
-
+/* 
 .skills::before{
     content: '';
     z-index: -1;
@@ -34,7 +34,7 @@
 
 .skills:hover::before {
     transform: translate3d(-50%, 50%, 0) scale3d(15, 15, 15);
-}
+} */
 
 
 .Skill-heading{
@@ -54,7 +54,7 @@
    font-size: 1.2rem;
 }
 
-
+/* 
 .Skill-heading:hover .Skill-desc{
     display:block;
     position: absolute;
@@ -62,7 +62,7 @@
     background-color: rgb(0, 0, 0);
     padding: 1rem;
     border: .1rem solid;
-}
+} */
 
 @media screen and (max-width:600px) 
 {
