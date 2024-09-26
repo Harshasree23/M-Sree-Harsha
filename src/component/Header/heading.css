@@ -1,0 +1,47 @@
+.my-name-container{
+    /* background-color: aqua; */
+    font-size: 7rem;
+    height: 100vh;
+    width: 100vw;
+    /* padding: 2rem; */
+    color: white;
+    position: relative;  
+    text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+}
+
+.munimadugu{
+    position: absolute;
+    top: 28%;
+    right: 25%;  
+}
+
+.harsha{
+    position: absolute;
+    top: 48%;
+    right: 5%; 
+}
+
+.name::selection{
+    background-color: transparent;
+}
+
+@media (max-width:600px) 
+{
+    .my-name-container{
+        /* border: .1rem solid; */
+        font-size: 2.5rem;
+        color: white;
+    }    
+    .munimadugu{
+        position: absolute;
+        top: 48%;
+        right: 15%;  
+    }
+    
+    .harsha{
+        position: absolute;
+        top: 55%;
+        right: 3%; 
+    }
+    
+}

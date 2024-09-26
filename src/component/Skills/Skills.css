@@ -1,0 +1,14 @@
+.skill-container{
+    padding: 2rem;
+    columns: 250px;
+}
+
+
+@media screen and (max-width:600px) 
+{
+    .skill-container{
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: .1rem; 
+    }   
+}

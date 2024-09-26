@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+:root{
+    --urban : "Urbanist", sans-serif;
+    --pixeled :  "VT323", monospace ;
+    --tribal : "Sankofa Display", sans-serif;
+    --dance: "Dancing Script", cursive;
+    --atomic: "Atomic Age", system-ui;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.disappear{
+    animation: disappearAnimation ;
+    animation-timeline: view();
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes disappearAnimation 
+{
+    0%{
+        transform: scale(1);
+        filter: blur(0);
+    }   
+    55%{
+        transform: scale(1) translateX(0px);
+        filter: blur(0);
+    } 
+    85%{
+        transform: scale(1) translateX(-100px);
+        filter: blur(0);
+    }
+    100%{
+        transform: scale(.5) translateX(-300px);
+        filter: blur(10px);
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.showScroll{
+    animation: showScrollAnimation both;
+    animation-timeline: view(70% 15%);
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes showScrollAnimation 
+{
+    from{
+        transform: translateY(400px) scale(0.3);
+        filter: blur(10px);
+    }   
+    to{
+        transform: translateY(0px) scale(1);
+        filter: blur(0);
+    } 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.comeAndGo{
+    animation: comeAndGoAnimation both;
+    animation-timeline: view();
+}
+
+@keyframes comeAndGoAnimation 
+{
+    0%{
+        transform: translateY(300px) scale(0.3);
+        filter: blur(10px);
+    } 
+    30%{
+        transform: translateY(0px) scale(1);
+        filter: blur(0px);
+    }  
+    80%{
+        transform: translateY(0px) scale(1);
+        filter: blur(0px);
+    }
+    100%{
+        transform: translateY(-100px) scale(0.5);
+        filter: blur(10px);
+    } 
+}
+
+.riseUp{
+    animation: riseUpAnimation;
+    animation-timeline: view();
+}
+
+@keyframes riseUpAnimation {
+    50%{
+        transform: scale(1) translateY(0);
+    }
+    100%{
+        transform: scale(0.9) translateY(-300px);
+    }
+}
+
+.popUp{
+    border: .1rem solid;
+    animation: popUpAnimation both;
+    animation-timeline: view();
+}
+
+@keyframes popUpAnimation{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+        transform: scale(0.1) ;
+    }
+    55%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    90%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(.1);
+    }
+}
+
+
+.blurHighlight{
+    animation: blurHighlightAnimation;
+    animation-timeline: view();
+}
+
+@keyframes blurHighlightAnimation
+{
+    0%{
+        filter: blur(15px);
+    }
+    45%,55%{
+        filter: blur(0px);
+    }
+    100%{
+        filter: blur(15px);
+    }
 }

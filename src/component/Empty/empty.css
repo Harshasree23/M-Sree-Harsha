@@ -1,0 +1,35 @@
+.empty{
+    margin: 5rem auto;
+    min-height: 40vh ;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.intro{
+    font-family: var(--dance);
+    font-weight: bold;
+    position: absolute;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    right: 15%;
+    font-size: 6rem;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+@media (max-width:600px)
+{
+    .empty{
+        min-height: none;
+        height: 5rem;
+        width: 80vw;
+        /* margin: 5rem auto; */
+    }
+
+    .intro{
+        font-size: 3rem;
+    }
+}

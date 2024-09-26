@@ -1,0 +1,12 @@
+.date{
+    font-size: 1.5rem;
+    padding: .5rem .7rem;
+    font-family: var(--urban);
+    width: fit-content;
+}
+
+@media (max-width: 600px) {
+    .date {
+      display: none;
+    }
+  }

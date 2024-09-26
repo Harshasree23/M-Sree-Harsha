@@ -1,0 +1,75 @@
+.certificate-container{
+    width: calc(80vw + .1rem);
+    /* border: .1rem solid yellow; */
+    margin: 1rem auto;
+}
+
+.rotate-class{
+    width: 100%;
+    margin: 4rem auto;
+    /* background-color: aqua; */
+    transform-style: preserve-3d;
+    height: calc( 301px * var(--quantity) );
+    position: relative;
+}
+
+
+
+.rotate-slider{
+    position: absolute;
+    text-align: center;
+    /* border: .2rem solid yellowgreen; */
+    width: 450px;
+    display: flex;
+    align-items: center;
+    top: 20%;
+    --height:300;
+    left: calc( 50% - 125px);
+    transform-style: preserve-3d;
+    --perspectiveDistance : calc( var(--height) * var(--quantity)  );
+    --apparentSize : calc(var(--height) * var(--quantity) * (var(--perspectiveDistance) + var(--height)) / var(--perspectiveDistance ) * 1px);
+    height: calc(var(--apparentSize ));
+    transform: perspective( calc(var(--perspectiveDistance) * 1px) );
+    animation: rotate both;
+    animation-timeline: view();
+}   
+
+@keyframes rotate {
+    0%{
+        transform: perspective( calc( var(--height) * var(--quantity) * 1px ))
+        translateY(calc( var(--height) * 0.1px ))
+        rotateY( 0deg );
+    }
+    80%{
+        transform: perspective( calc( var(--height) * var(--quantity) * 1px ))
+        translateY( calc( var(--height) * -5px ) )
+        rotateY( -360deg );
+    }
+    100%{
+        transform: perspective( calc( var(--height) * var(--quantity) * 1px ))
+        translateY( calc( var(--height) * -4px ) )
+        rotateY( -360deg );
+    }
+}
+
+
+@media screen and (max-width:600px)
+{
+    .certificate-container{
+        width: calc(78vw + 1rem);
+        padding: 0rem;
+        /* overflow-x: hidden; */
+    }
+    .rotate-class{
+        margin-top: 10rem;
+        height: calc( 90px * var(--quantity) + 400px );
+    }
+    .rotate-slider{
+        width: calc( 60vw + 1rem );
+        --height:90;
+        --perspectiveDistance : calc( var(--height) * var(--quantity)  );
+        --apparentSize : calc(var(--height) * var(--quantity) * (var(--perspectiveDistance) + var(--height)) / var(--perspectiveDistance ) * 1px);
+        height: calc(var(--apparentSize ));
+        transform: perspective( calc(var(--perspectiveDistance) * 1px) );
+    }
+}

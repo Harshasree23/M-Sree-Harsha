@@ -1,0 +1,17 @@
+.nav-item{
+    display: block;
+    width: 100%;
+    padding: .4rem 0rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.nav-item:hover{
+    font-weight: bold;
+    transition: bold 1s;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,45 @@
+.image{
+    height: 100%;
+    width: 100%;
+    background-image: url(../../../public/My-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 10rem;
+}
+
+.about-text{
+    padding-top: 50%;
+    padding-bottom: 10%;
+    backdrop-filter: grayscale(100%);
+    color: rgb(255, 253, 253);
+    font-size: 8rem;
+    text-align: left;
+}
+
+.about-word{
+    font-family: var(--dance);
+    /* background-color: rgba(0, 0, 0, 0.363); */
+    margin-left: 10%;
+    width: fit-content;
+}
+
+.about-word:nth-child(even){
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+
+@media screen and (max-width:600px) 
+{
+    .about-text{
+        font-size: 4rem;
+    }
+
+    .image{
+        background-image: url(../../../public/me.jfif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}

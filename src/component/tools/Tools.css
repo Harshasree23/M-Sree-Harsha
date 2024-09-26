@@ -1,0 +1,23 @@
+.tools{
+    height: 100%;
+    padding: .5rem;
+    margin-left: auto;
+}
+
+.tool-item{
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.tool-item img{
+    width: 100%;
+    filter: grayscale(0%);
+}
+
+.tool-select{
+    height: 2rem;
+    cursor: pointer;
+}
