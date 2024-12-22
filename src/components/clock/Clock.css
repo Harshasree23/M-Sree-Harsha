@@ -1,0 +1,7 @@
+.clock{
+    min-width: 10rem;
+}
+
+.time , .date{
+    margin: .5rem 1rem;
+}

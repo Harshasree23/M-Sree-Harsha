@@ -1,0 +1,12 @@
+.desc-list{
+    font-size: 1.3rem;
+    margin: 1rem;
+    padding: 1rem;
+    font-family: var(--font);
+    color:var(--mainfont);
+}
+
+.desc-list ul{
+    margin-top: .5rem;
+    margin-left: 5rem;
+}

@@ -1,0 +1,67 @@
+.contact-container{
+    background-color: var(--rare);
+    background-image: repeating-linear-gradient(
+      135deg, 
+      var(--highlight) 0, 
+      var(--highlight) .3rem, 
+      transparent 2px, 
+      transparent 10px
+    );
+    color: var(--secondaryfont);
+    min-height: 20vh;
+}
+
+.contact-top{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 0rem;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: .2rem solid var(--middle);
+}
+
+.my-logo{
+    filter: invert(1);
+    width: 10rem
+}
+
+.name{
+    font-family: var(--font);
+    font-size: 1.5rem;
+}
+
+.contact-icons{
+    display: flex;
+    position: relative;
+}
+
+.icons{
+    height: 2rem;
+    width: 2rem;
+    margin: 0rem .5rem;
+    filter: invert(1);
+    /* position: relative; */
+}
+
+.pop-up{
+    font-family: var(--font);
+    width: fit-content;
+    font-size: 1.1rem;
+    padding: .5rem;
+    background-color: var(--secondarytrans);
+    border-radius: .3rem;
+    box-shadow: .2rem .2rem .5rem var(--middle);
+    position: absolute;
+    inset: 0;
+    transform: translateY(-4rem) ;
+    filter: opacity(0);
+    text-decoration: none;
+    color: var(--mainfont);
+    z-index: -10;
+}
+
+.icons:hover + .pop-up{
+    filter: opacity(1);
+    z-index: 10;
+}

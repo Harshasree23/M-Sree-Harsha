@@ -1,0 +1,90 @@
+.badges-container{
+    font-family: var(--font);
+    margin: 5rem 0rem 10rem;
+    background-color: var(--primarytrans);
+    color: var(--mainfont);
+}
+
+.badges-heading{
+    font-size: 4rem;
+    padding: 2rem;
+    margin: 5rem 0rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.badges{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.img-leaves {
+    /* background-color: aquamarine; */
+    position: relative; 
+    width: 7rem; 
+    height: 7rem;
+}
+
+.img-leaves img {
+    position: absolute; 
+    bottom: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+}
+
+.img-leaves img:first-child {
+    left: 15%;
+    bottom: 40%;
+    height: 5rem;
+    width: 5rem;
+    z-index: 2; 
+}
+
+.img-leaves img:last-child {
+    position: absolute;
+    left: -33%;
+    height: 11rem;
+    width: 11rem;
+    z-index: 1; 
+    filter: opacity(0.6) var(--samebg);
+}
+
+
+.caption{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0rem;
+}
+
+/* Animations and Effects */
+
+.badges-heading p {
+    opacity: 0;
+    transform: translateY(5rem); 
+    transition: opacity 1s ease, transform 1s ease; 
+}
+
+.badges-heading p.in-view {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.img-leaves{
+    opacity: 0;
+    transform: translateY(5rem); 
+    transition: opacity 1s ease, transform 1s ease; 
+}
+
+.img-leaves.badge-view{
+    opacity: 1; 
+    transform: translateY(0); 
+}

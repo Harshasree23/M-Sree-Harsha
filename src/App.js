@@ -1,57 +1,82 @@
+import { useEffect, useState } from 'react';
 import './App.css';
-import Heading from './component/Header/Header.js';
-import { NavBar } from './component/Navbar/NavBar.js';
-// import { SkillBar } from './component/SkillBar/SkillBar.js';
-// import InteractiveBackground from './component/Interactive/InteractiveBackground.js';
-import { Empty } from './component/Empty/Empty.js';
-// import { Projects } from './component/Projects/Projects.js';
-import { Certificate } from './component/certifiacte/Certificate.js';
-import { Contact } from './component/Contact/Contact.js';
-import { Tools } from './component/tools/Tools.js';
-import { Skills } from './component/Skills/Skills.js';
-import { About } from './component/About/About.js';
-import SlideShow from './component/SlideShow/SlideShow.js';
+import Contact from './components/contact/Contact';
+import Cursor from './components/cursor/Cursor';
+import Home from './components/home/Home';
+import Stack from './components/stack/Stack';
+import ProjectHeading from './components/projectHeading/ProjectHeading';
+import Badges from './components/badges/Badges';
+import PortfolioProject from './components/portfolioProject/PortfolioProject';
+import HapiProject from './components/hapiProject/HapiProject';
 
 
+function App() {
+  const [page,setPage] = useState("home");
+  const [pageData,setPageData] = useState({});
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      setIsDarkMode(true);
+    } else {
+      setIsDarkMode(false);
+    }
+  }, []);
 
-// import { createContext, useState } from 'react';
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+    const newTheme = !isDarkMode ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
+  };
 
-// const ToolContext = createContext();
-
-// export const ToolProvider = ({ children }) => {
-//   const [toolVariable, setToolVariable] = useState('circle'); // Replace with your initial value
-
-//   return (
-//     <ToolContext.Provider value={{ toolVariable, setToolVariable }}>
-//       {children}
-//     </ToolContext.Provider>
-//   );
-// };
-
-
-export function App() {
+  useEffect( () => {
+    window.scrollTo(0,0);
+  } , [page] );
+ 
+  const renderPage = () => {
+    switch(page)
+    {
+      case "home":
+        return  <>
+                <div className={`app ${isDarkMode ? 'dark-theme' : ''}`} >
+                  <Cursor/>
+                  <Home toggleTheme={toggleTheme}  isDarkMode={isDarkMode} />
+                  <Stack setPage={setPage} setPageData={setPageData} />
+                  <Badges />
+                  <Contact />
+                </div>
+                </>;
+      case "Portfolio":
+        return <>
+                <div className={`app ${isDarkMode ? 'dark-theme' : ''}`}  >
+                    <Cursor />
+                    <PortfolioProject setPage={setPage} data={pageData} />
+                </div> 
+               </>
+      case "H-API":
+        return <>
+                <div className={`app ${isDarkMode ? 'dark-theme' : ''}`}  >
+                    <Cursor />
+                    <HapiProject setPage={setPage} data={pageData} />
+                </div> 
+               </>
+      default:
+        return <>
+                <div className={`app ${isDarkMode ? 'dark-theme' : ''}`} >
+                  <Cursor /> 
+                  <ProjectHeading setPage={setPage} setPageData={setPageData} heading="Still none" data={pageData} />
+                  <h1>Under Construction</h1>
+                </div>
+               </>
+    }
+  }
 
   return (
     <>
-      {/* <ToolProvider> */}
-        {/* <InteractiveBackground/> */}
-        <Tools/>
-      {/* </ToolProvider> */}
-        <Heading/>
-        <About/>
-        <NavBar/>
-        <Empty name='Skills'/>
-        <Skills/>
-        {/* <SkillBar /> */}
-        <Empty name='Projects'/>
-        {/* <Projects/> */}
-        <SlideShow/>
-        <Empty name='Certifications'/>
-        <Certificate/>
-        <Contact/>
-    </>  
+      { renderPage() }
+    </>
   );
 }
 
-// export default ToolContext;
+export default App;

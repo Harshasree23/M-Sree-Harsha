@@ -1,0 +1,26 @@
+
+.skills-container{
+    margin: 1rem;
+    padding: 1rem;
+    font-family: var(--font);
+    color: var(--mainfont);
+}
+
+.tech{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 0rem;
+}
+
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.skills p{
+    padding: .5rem;
+    border: .1rem solid var(--middle);
+    border-radius: .3rem;
+}

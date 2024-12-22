@@ -1,0 +1,31 @@
+.go-to-home{
+    background-color: var(--same);
+    border: .1rem solid;
+    border-radius: .3rem;
+    cursor: pointer;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+.go-to-home img{
+    height: 3rem;
+    width: 3rem;
+    filter: var(--samebg);
+}
+
+.pro-name{
+    background-color: var(--rare);
+    background-image: repeating-linear-gradient(
+      135deg, 
+      var(--highlight) 0, 
+      var(--highlight) .3rem, 
+      transparent 2px, 
+      transparent 10px
+    );
+    color: var(--secondaryfont);
+    padding: 1rem;
+    font-size: 5rem;
+    text-align: center;
+    font-family: var(--font);
+}

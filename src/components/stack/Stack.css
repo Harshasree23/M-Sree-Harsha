@@ -1,0 +1,151 @@
+:root{
+    --height: calc( 80vh + .1rem )
+}
+
+.stack-container {
+    padding: 0rem;
+    margin: 10rem 0;
+    background-color: var(--primarytrans);
+    height: fit-content;
+    position: relative;
+}
+
+.stack-back{
+    height: calc( var(--height) + 5rem );
+    position: sticky;
+    top: 0%;
+    width: 100%;
+    background-size: cover;
+}
+
+.stack-back p{
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: var(--font);
+    color: var(--mainfont);
+}
+
+.stack-children {
+    font-size: 10rem;
+    background-color:var(--primary);
+    display: flex;
+    flex-direction: column;
+    border-radius: .8rem ;
+    margin: 0 auto;
+    margin-bottom: 0rem;
+    height: var(--height);
+    width: 60vw;
+    position: sticky ;
+    top: 20%;
+    overflow: hidden;
+}
+
+.stack-children:last-child{
+    margin-bottom: 30rem;
+}
+
+.project-name{
+    background-color: var(--rare);
+    background-image: repeating-linear-gradient(
+      135deg, 
+      var(--highlight) 0, 
+      var(--highlight) .3rem, 
+      transparent 2px, 
+      transparent 10px
+    );
+    color: var(--secondaryfont);
+    border: .3rem solid var(--middle);
+    height: fit-content;
+    width: 100%;
+    margin: 0rem auto;
+    text-align: left;
+    padding: 1rem 3rem;
+    font-family: var(--font);
+    border-radius: .6rem .6rem 0rem 0rem;
+    font-size: 2.5rem;
+    line-height: 1;
+    position: relative;
+}
+
+
+.project-img{
+    width: 100%;
+    /* height: 100%; */
+    font-size: 1.5rem;
+    border: .3rem solid var(--middle);
+    z-index: -1;
+    background-color: var(--primary);
+    
+}
+
+.project-images{
+    width: 100%;
+    height: 100%;
+}
+
+.project-images img{
+    width: 100%;
+    height: 100%;
+    filter: --var(samediff);
+}
+
+/*  on hover effect  */
+
+.stack-children:hover{
+    transform: scale(105%);
+    transition: all .5s ease-in-out;
+}
+
+.stack-children:hover .project-name::after{
+    content: " ";
+    position: absolute;
+    right: 5% ;
+    background-image: url('../../../public/open_in_new.png');
+    background-size: cover;
+    filter: invert(1);
+    height: 2.5rem;
+    width: 2.5rem;
+    /* border: 2rem solid white; */
+}
+
+/* Animations and effect */
+
+.stack-back #heading {
+    opacity: 0;
+    transform: translateY(5rem); 
+    transition: opacity 1s ease, transform 1s ease; 
+}
+
+.stack-back #heading.in-view {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+
+@media screen and ( max-width:1024px ) 
+{
+    .stack-children{
+        width: 80%;
+    }    
+}
+
+@media screen and ( max-width: 768px ) 
+{
+    .stack-children{
+        top: 35%;
+        width: 95%;
+    }    
+
+    .stack-back{
+        top: 10%;
+    }
+
+    .stack-back p{
+        font-size: 3.5rem;
+    }
+
+    .project-name{
+        font-size: 2.5rem;
+    }
+}

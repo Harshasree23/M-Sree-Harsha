@@ -1,14 +1,12 @@
 body {
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   overflow-x: hidden;
-  overflow-y:scroll;
-  /* From Uiverse.io by kennyotsu */ 
-  /* Add your background pattern here */
-  background-color: #f5f5f5;
-  background-image: radial-gradient(rgba(70, 33, 33, 0.171) 2px, transparent 0);
-  background-size: 30px 30px;
-  background-position: -5px -5px
+}
+
+html, body {
+  cursor: none;
 }
 
 ::-webkit-scrollbar {
@@ -16,9 +14,82 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #ffffff;
+  background-color: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 0, 0);
+  background-color: var(--scrollbar-thumb);
+}
+
+:root {
+
+  /* Main colors */
+  --primary: #f8f8f8;         
+  --secondary: #eaeaea;       
+  --middle: #c2c2c2;          
+  --highlight: #383838;       
+  --rare: #222222;            
+
+  /* Transparent versions */
+  --primarytrans: #f8f8f888;
+  --secondarytrans: #eaeaea88;
+  --middletrans: #c2c2c288;
+  --highlighttrans: #4a4a4a88;
+  --raretrans: #2e2e2e80;
+
+  /* Font colors */
+  --mainfont: #2e2e2e;        
+  --secondaryfont: #f8f8f8;   
+
+  /* Scrollbar colors */
+  --scrollbar-track: #f1eeee;
+  --scrollbar-thumb: #313030;
+
+
+  /* filters for image */
+  --samebg: invert(0);
+  --diffbg: grayscale(0);
+
+  /* opposite and same colors */
+  --same: #f8f8f8;
+  --opp: #2e2e2e;
+
+  --font: "Delius", cursive;
+}
+
+.dark-theme {
+
+  /* Main colors */
+  --primary: #1a1a1a;        
+  --secondary: #2a2a2a;       
+  --middle: #555555;         
+  /* --highlight: #4a4a4a;       
+  --rare: #2e2e2e;    */
+
+
+  /* Transparent versions */
+  --primarytrans: #1a1a1a88;
+  --secondarytrans: #2a2a2a88;
+  --middletrans: #55555588;
+  --highlighttrans: #d8d8d888;
+  --raretrans: #f0f0f088;
+
+  /* Font colors */
+  --mainfont: #e0ded6;       
+  /* --secondaryfont: #aaaaaa;   
+
+  /* Scrollbar colors */
+  --scrollbar-track: #2a2a2a;
+  --scrollbar-thumb: #555555;
+
+
+  /* opposite and same colors */
+  --opp: #f8f8f8;
+  --same: #2e2e2e;
+
+  /* filters for image */
+  --samebg: invert(1);
+  --diffbg: grayscale(0);
+
+  --font: "Delius", cursive;
 }

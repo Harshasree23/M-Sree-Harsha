@@ -1,147 +1,21 @@
-:root{
-    --urban : "Urbanist", sans-serif;
-    --pixeled :  "VT323", monospace ;
-    --tribal : "Sankofa Display", sans-serif;
-    --dance: "Dancing Script", cursive;
-    --atomic: "Atomic Age", system-ui;
+.app{
+  background-color: var(--primary);
+  background-image: repeating-linear-gradient(
+      135deg, 
+      var(--secondarytrans) 0, 
+      var(--secondarytrans) .3rem, 
+      transparent 2px, 
+      transparent 10px
+  );
+  background-attachment: fixed;
+  color: var(--mainfont);
 }
 
-/* 
-.disappear{
-    animation-timeline: view(block);
-    animation-name: disappearAnimation;
-    animation-fill-mode: both;
-    animation-duration: 1ms; 
-    animation-timing-function: linear;
- 
-}
-
-@keyframes disappearAnimation 
-{
-    0%{
-        transform: scale(1);
-        filter: blur(0);
-    }   
-    55%{
-        transform: scale(1) translateX(0px);
-        filter: blur(0);
-    } 
-    85%{
-        transform: scale(1) translateX(-100px);
-        filter: blur(0);
-    }
-    100%{
-        transform: scale(.5) translateX(-300px);
-        filter: blur(10px);
-    }
-}
-
-.showScroll{
-    animation-timeline: view(70% 15%);
-    animation-name: showScrollAnimation;
-    animation-fill-mode: both;
-    animation-duration: 1ms; 
-    animation-timing-function: linear;
-}
-
-@keyframes showScrollAnimation 
-{
-    from{
-        transform: translateY(400px) scale(0.3);
-        filter: blur(10px);
-    }   
-    to{
-        transform: translateY(0px) scale(1);
-        filter: blur(0);
-    } 
-}
-
-
-.comeAndGo{
-    animation: comeAndGoAnimation both;
-    animation-timeline: view();
- 
-}
-
-@keyframes comeAndGoAnimation 
-{
-    0%{
-        transform: translateY(300px) scale(0.3);
-        filter: blur(10px);
-    } 
-    30%{
-        transform: translateY(0px) scale(1);
-        filter: blur(0px);
-    }  
-    80%{
-        transform: translateY(0px) scale(1);
-        filter: blur(0px);
-    }
-    100%{
-        transform: translateY(-100px) scale(0.5);
-        filter: blur(10px);
-    } 
-}
-
-.riseUp{
-    animation: riseUpAnimation;
-    animation-timeline: view();
- 
-}
-
-@keyframes riseUpAnimation {
-    50%{
-        transform: scale(1) translateY(0);
-    }
-    100%{
-        transform: scale(0.9) translateY(-300px);
-    }
-}
-
-.popUp{
-    border: .1rem solid;
-    animation: popUpAnimation both;
-    animation-timeline: view();
-}
-
-@keyframes popUpAnimation{
-    0%{
-        opacity: 0;
-    }
-    20%{
-        opacity: 0;
-        transform: scale(0.1) ;
-    }
-    55%{
-        opacity: 1;
-        transform: scale(1);
-    }
-    90%{
-        opacity: 1;
-        transform: scale(1);
-    }
-    100%{
-        opacity: 0;
-        transform: scale(.1);
-    }
-}
-
-
-.blurHighlight{
-    animation: blurHighlightAnimation;
-    animation-timeline: view();
- 
-}
-
-@keyframes blurHighlightAnimation
-{
-    0%{
-        filter: blur(15px);
-    }
-    45%,55%{
-        filter: blur(0px);
-    }
-    100%{
-        filter: blur(15px);
-    }
-} */
+/* background-image: repeating-linear-gradient(
+      135deg, 
+      var(--secondary) 0, 
+      var(--secondary) .3rem, 
+      transparent 2px, 
+      transparent 10px
+  );
+  background-attachment: fixed; */

@@ -1,0 +1,32 @@
+
+.image-matter{
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 65% 35%;
+    font-family: var(--font);
+    color: var(--mainfont);
+}
+
+.pro-image img{
+    grid-area: "img";
+    width: 100%;
+    border: .3rem solid var(--middle);
+    border-radius: .4rem;
+}
+
+.pro-image-matter{
+    grid-area: "mtr";
+    display: flex;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+@media screen and ( max-width:768px ) 
+{
+    .image-matter{
+        display: flex;
+        flex-direction: column;
+    }    
+}
