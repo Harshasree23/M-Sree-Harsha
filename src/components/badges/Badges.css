@@ -1,6 +1,6 @@
 .badges-container{
     font-family: var(--font);
-    margin: 5rem 0rem 10rem;
+    margin-bottom: 10rem;
     background-color: var(--primarytrans);
     color: var(--mainfont);
 }

@@ -6,8 +6,8 @@ const ImageMatter = (props) => {
         <>
             <div className="image-matter" >
                 
-                <div  className='pro-image' >
-                    <img src={props.src} alt={props.alt}/>
+                <div className='pro-image' >
+                    <img style={ props.style || undefined } src={props.src} alt={props.alt}/>
                 </div>
 
                 <div className='pro-image-matter' >

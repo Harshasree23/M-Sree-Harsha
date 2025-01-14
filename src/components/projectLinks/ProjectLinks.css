@@ -4,6 +4,7 @@
     border: .5rem solid var(--middle);
     padding: 3rem 5rem;
     width: fit-content;
+    overflow-wrap: break-word;
     border-radius: .3rem;
     align-items: center;
     gap: 1.5rem;
@@ -17,22 +18,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow-wrap: break-word; /* Ensure text wraps */
+    word-wrap: break-word; /* Older property for backward compatibility */
+    white-space: normal; /* Allow the text to wrap naturally */
+}
+
+.link p {
+    word-wrap: break-word; /* Ensures the text inside the <p> wraps */
+    white-space: normal; /* Prevents the text from being cut off */
+    overflow-wrap: break-word; /* Another property for wrapping */
+}
+
+.no-link a{
+    pointer-events: none;
+    color: gray;
 }
 
 .link a {
-    /* text-decoration: none; */
     color: inherit;
 }
 
-.link img{
-    height: 2rem;
-    width: 2rem;
-    margin: 0rem .3rem;
-}
-
-.link img:first-child{
-    margin-right: 2rem;
-}
 
 .link p{
     position: relative;
@@ -50,7 +55,6 @@
     bottom: .2rem;
     margin-left: .5rem;
 }
-
 
 
 .return-home{
@@ -82,7 +86,24 @@
         justify-content: left;
         align-items: start;
     }
+
+    .link p{
+        font-size: 1.1rem;
+    }
         
+    .link p::after{
+        content: "";
+        position: absolute;
+        background-image: url('../../../public/open_in_new.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: var(--samebg);
+        height: 1.5rem;
+        width: 1.5rem;
+        bottom: -.1rem;
+        margin-left: .5rem;
+    }
+
     .return-home{
         margin: .5rem auto;
     }

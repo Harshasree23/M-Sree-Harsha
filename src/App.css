@@ -11,6 +11,14 @@
   color: var(--mainfont);
 }
 
+/* Disable hover and pointer events on mobile and tablet devices */
+@media (hover: none) and (pointer: coarse) {
+  *:hover {
+    hover: none !important;
+  }
+}
+
+
 /* background-image: repeating-linear-gradient(
       135deg, 
       var(--secondary) 0, 

@@ -3,6 +3,7 @@
     border: .1rem solid;
     border-radius: .3rem;
     cursor: pointer;
+    width: fit-content;
     position: absolute;
     left: 1rem;
     top: 1rem;
@@ -28,4 +29,11 @@
     font-size: 5rem;
     text-align: center;
     font-family: var(--font);
+}
+
+@media screen and ( max-width: 768px ) {
+    .pro-name{
+        font-size: 3.5rem;
+        text-align: right;
+    }
 }

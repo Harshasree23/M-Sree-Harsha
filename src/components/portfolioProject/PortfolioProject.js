@@ -6,8 +6,21 @@ import Desc from '../Desc/Desc';
 import DescList from '../descList/DescList';
 import ProjectLinks from '../projectLinks/ProjectLinks';
 import { InView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 const PortfolioProject = (props) => {
+
+     useEffect(() => {
+            const handlePopState = (event) => {
+              props.setPage("home");
+            };
+            window.addEventListener('popstate', handlePopState);
+            window.history.pushState(null, null, window.location.href);
+            return () => {
+              window.removeEventListener('popstate', handlePopState);
+            };
+          }, [props,props.setPage]);
+
     return (
         <>
             <div className='project'>

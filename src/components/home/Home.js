@@ -24,7 +24,7 @@ const Home = (props) => {
                 
                 <div className='other-tools' >
                     <div onClick={props.toggleTheme} className='theme'>
-                        {props.isDarkMode ? 'Light' : 'Dark'} Mode
+                        <img src='theme.png' className={ props.isDarkMode ? 'dark-img' : 'light-img' } alt='theme' /> 
                     </div>
                 </div>
 

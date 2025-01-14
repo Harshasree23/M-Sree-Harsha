@@ -1,0 +1,33 @@
+.project{
+    padding: 2rem 0rem;
+}
+
+.animated-component {
+    opacity: 0;
+    transform: translateY(5rem); 
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animated-component.in-view {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.img-matter{
+    font-size: 1.5rem;
+    max-width: 670px;
+    font-family: var(--font);
+}
+
+.img-container{
+    margin: 5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img-container img{
+    box-shadow: .1rem .1rem 3rem var(--middle);
+}

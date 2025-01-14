@@ -8,6 +8,7 @@ import ProjectHeading from './components/projectHeading/ProjectHeading';
 import Badges from './components/badges/Badges';
 import PortfolioProject from './components/portfolioProject/PortfolioProject';
 import HapiProject from './components/hapiProject/HapiProject';
+import DsmartProject from './components/dsmartProject/dsmartProject';
 
 
 function App() {
@@ -61,11 +62,18 @@ function App() {
                     <HapiProject setPage={setPage} data={pageData} />
                 </div> 
                </>
+      case "D-SMART":
+        return <>
+              <div className={`app ${isDarkMode ? 'dark-theme' : ''}`}  >
+                <Cursor />
+                <DsmartProject setPage={setPage} data={pageData} />
+              </div>
+        </>
       default:
         return <>
                 <div className={`app ${isDarkMode ? 'dark-theme' : ''}`} >
                   <Cursor /> 
-                  <ProjectHeading setPage={setPage} setPageData={setPageData} heading="On-going" />
+                  <ProjectHeading setPage={setPage}  heading="On-going" />
                   <h1>Details will be uploaded soon ...</h1>
                 </div>
                </>
