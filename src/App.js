@@ -65,8 +65,8 @@ function App() {
         return <>
                 <div className={`app ${isDarkMode ? 'dark-theme' : ''}`} >
                   <Cursor /> 
-                  <ProjectHeading setPage={setPage} setPageData={setPageData} heading="Still none" data={pageData} />
-                  <h1>Under Construction</h1>
+                  <ProjectHeading setPage={setPage} setPageData={setPageData} heading="On-going" />
+                  <h1>Details will be uploaded soon ...</h1>
                 </div>
                </>
     }
