@@ -93,3 +93,9 @@ html, body {
 
   --font: "Delius", cursive;
 }
+
+
+::selection{
+  background-color: var(--opp);
+  color: var(--same);
+}
