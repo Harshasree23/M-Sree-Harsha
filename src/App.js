@@ -9,6 +9,8 @@ import Badges from './components/badges/Badges';
 import PortfolioProject from './components/portfolioProject/PortfolioProject';
 import HapiProject from './components/hapiProject/HapiProject';
 import DsmartProject from './components/dsmartProject/dsmartProject';
+// import Exp from './components/exp/Exp';
+import Certifications from './components/certifications/Certifications';
 
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
                   <Cursor/>
                   <Home toggleTheme={toggleTheme}  isDarkMode={isDarkMode} />
                   <Stack setPage={setPage} setPageData={setPageData} />
+                  {/* <Exp /> */}
+                  <Certifications />
                   <Badges />
                   <Contact />
                 </div>

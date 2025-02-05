@@ -1,0 +1,79 @@
+.all-certificates{
+    margin: 5rem 5rem;
+    columns: 200px;
+    font-family: var(--font);
+}
+
+.all-certificates > * {
+    break-inside: avoid; /* Prevent breaking content */
+    page-break-inside: avoid; /* Older browser support */
+}
+
+.heading{
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--font);
+    font-size: 5rem;
+    margin-top: 6rem;
+}
+
+.heading #heading {
+    opacity: 0;
+    transform: translateY(5rem); 
+    transition: opacity 1s ease, transform 1s ease; 
+}
+
+.heading #heading.in-view {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.certificate{
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    border-radius: .3rem;
+    background-color: var(--secondarytrans);
+    box-shadow: .2rem .2rem .5rem var(--raretrans);
+    border: .2rem solid var(--middle);
+    margin-bottom: 1rem;
+    border-radius: .3rem;
+}
+
+.certi-name{
+    font-weight: bold;
+    padding-bottom: .3rem;
+    margin-bottom: .3rem;
+    border-bottom: .2rem solid var(--opp);
+    text-align: left;
+}
+
+.certi-skills{
+    margin: .5rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.certi-skills .skill{
+    font-size: .8rem;
+    font-weight: bold;
+    border: .1rem solid var(--opp);
+    border-radius: .3rem;
+    padding: .3rem .5rem;
+}
+
+.certi-desc{
+    font-size: 1rem;
+    text-align: left;
+}
+
+@media screen and ( max-width: 768px ) 
+{
+    .all-certificates{
+        margin: .1rem 5rem;
+        columns: 150px;
+    }
+    .heading{
+        font-size: 3.5rem;
+    }
+}
