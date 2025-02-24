@@ -11,6 +11,7 @@ import HapiProject from './components/hapiProject/HapiProject';
 import DsmartProject from './components/dsmartProject/dsmartProject';
 // import Exp from './components/exp/Exp';
 import Certifications from './components/certifications/Certifications';
+import About from './components/about/About';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
                 <div className={`app ${isDarkMode ? 'dark-theme' : ''}`} >
                   <Cursor/>
                   <Home toggleTheme={toggleTheme}  isDarkMode={isDarkMode} />
+                  <About />
                   <Stack setPage={setPage} setPageData={setPageData} />
                   {/* <Exp /> */}
                   <Certifications />

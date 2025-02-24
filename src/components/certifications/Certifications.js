@@ -85,16 +85,31 @@ const Certifications = () => {
                     </div>
                 ) : (
                     <>
-                    <div className='all-certificates' >
+                    <div className='all-certificates'>
                         {data &&
                             data.map((item, index) => (
-                                <div className='certificate' >
-                                    <div className={inView ? 'certi-name in-view' : 'certi-name'} > {item.certificateName} </div>
-                                    <div className={inView ? 'certi-skills in-view' : 'certi-skills'} >  { item.skills.map( (i) => ( <div className='skill' >{i}</div> ) ) } </div>
-                                    <div className={inView ? 'certi-desc in-view' : 'certi-desc'} > { item.description } </div>
-                                </div>
+                                <InView key={index} threshold={0.3} triggerOnce={false}>
+                                    {({ inView, ref }) => (
+                                        <div ref={ref} className={`certificate ${inView ? 'in-view' : ''}`}>
+                                            <div className="certi-name">{item.certificateName}</div>
+                                            <div className="certi-skills">
+                                                {item.skills.map((skill, i) => (
+                                                    <div key={i} className='skill'>{skill}</div>
+                                                ))}
+                                            </div>
+                                            <div className="certi-desc">{item.description}</div>
+                                            <div className='verify'>
+                                                <a target='_blank' rel="noreferrer" href={item.verify}>
+                                                    Verify
+                                                    <img src='open_in_new.png' alt="open in new" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )}
+                                </InView>
                             ))}
                     </div>
+
                        
                     </>
                 )}
