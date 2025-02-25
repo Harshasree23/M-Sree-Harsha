@@ -1,236 +1,74 @@
-/* From Uiverse.io by alexruix */ 
+.loading{
+  margin: 2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2rem;
+}
+
 .loader {
-    margin: 2rem auto ;
-    width: 112px;
-    height: 112px;
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+}
+
+
+.loader:before {
+  content: '';
+  width: 4rem;
+  height: .5rem;
+  background: var(--middletrans);
+  position: absolute;
+  top: 5rem;
+  left: 0rem;
+  border-radius: 50%;
+  animation: shadow324 0.5s linear infinite;
+}
+
+.loader:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: var(--opp);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  animation: jump7456 0.5s linear infinite;
+}
+
+
+@keyframes jump7456 {
+  15% {
+    border-bottom-right-radius: 3px;
   }
-  
-  .loader-box1,
-  .loader-box2,
-  .loader-box3 {
-    border: 1rem solid #000000;
-    border-radius: 2rem;
-    box-sizing: border-box;
-    position: absolute;
-    display: block;
+
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
   }
-  
-  .loader-box1 {
-    width: 112px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-    animation: abox1 1s .2s forwards ease-in-out infinite;
+
+  50% {
+    transform: translateY(18px) scale(1, .9) rotate(45deg);
+    border-bottom-right-radius: 40px;
   }
-  
-  .loader-box2 {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-    animation: abox2 1s .2s forwards ease-in-out infinite;
+
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
   }
-  
-  .loader-box3 {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-    animation: abox3 1s .2s forwards ease-in-out infinite;
+
+  100% {
+    transform: translateY(0) rotate(90deg);
   }
-  
-  @keyframes abox1 {
-    0% {
-      width: 112px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 0px;
-    }
-  
-    12.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 0px;
-    }
-  
-    25% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 0px;
-    }
-  
-    37.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 0px;
-    }
-  
-    50% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 0px;
-    }
-  
-    62.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 0px;
-    }
-  
-    75% {
-      width: 48px;
-      height: 112px;
-      margin-top: 0px;
-      margin-left: 0px;
-    }
-  
-    87.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 0px;
-    }
-  
+}
+
+@keyframes shadow324 {
+
+  0%,
     100% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 0px;
-    }
+    transform: scale(1, 1);
   }
-  
-  @keyframes abox2 {
-    0% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 0px;
-    }
-  
-    12.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 0px;
-    }
-  
-    25% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 0px;
-    }
-  
-    37.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 0px;
-    }
-  
-    50% {
-      width: 112px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 0px;
-    }
-  
-    62.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 64px;
-    }
-  
-    75% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 64px;
-    }
-  
-    87.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 64px;
-    }
-  
-    100% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 64px;
-    }
+
+  50% {
+    transform: scale(1.2, 1);
   }
-  
-  @keyframes abox3 {
-    0% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 64px;
-    }
-  
-    12.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 0px;
-      margin-left: 64px;
-    }
-  
-    25% {
-      width: 48px;
-      height: 112px;
-      margin-top: 0px;
-      margin-left: 64px;
-    }
-  
-    37.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 64px;
-    }
-  
-    50% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 64px;
-    }
-  
-    62.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 64px;
-    }
-  
-    75% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 64px;
-    }
-  
-    87.5% {
-      width: 48px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 64px;
-    }
-  
-    100% {
-      width: 112px;
-      height: 48px;
-      margin-top: 64px;
-      margin-left: 0px;
-    }
-  }
-  
+}
