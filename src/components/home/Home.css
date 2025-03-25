@@ -97,7 +97,6 @@
 
 .skills {
     width: 100%;
-    font-family: "Boldonse", system-ui;
     overflow: hidden; 
     white-space: nowrap;
 }
@@ -121,6 +120,7 @@
 
 .skills .slider .item {
     background-color: var(--middle);
+    font-family: "Boldonse", system-ui;
     padding: .5rem 0rem;
     position: absolute;
     font-size: 1.2rem;
