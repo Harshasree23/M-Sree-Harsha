@@ -89,7 +89,7 @@ const Stack = (props) => {
                 ) : (
                     <>
                         {data &&
-                            data.map((item, index) => (
+                            data.slice().reverse().map((item, index) => (
                                 <div
                                     key={index}
                                     className="stack-children"

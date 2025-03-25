@@ -8,7 +8,7 @@ const About = () => {
             <InView threshold={0.45} triggerOnce={false}  >
                 {({ inView, ref }) => (
                     <div ref={ref} className={`description ${inView ? 'in-view' : ''}`}>
-                        <p>I am a computer science enthusiast exploring different technologies around.</p>
+                        <p>Full-stack web developer who loves building scalable and efficient applications. I focus on creating optimal and user-friendly solutions.</p>
                     </div>  
                 )}
             </InView>

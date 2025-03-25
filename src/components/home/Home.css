@@ -3,27 +3,14 @@
     height: calc(100vh + 0.1rem);
     padding-top: 1rem;
     font-family: var(--font);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 35% 10%;
     background-color: var(--primarytrans);
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     opacity: 0;
     animation: pageLoad .5s ease-out forwards;
 }
-
-.light-img, .dark-img{
-    width: 2.5rem;
-    height: 2.5rem;
-    transition: .5s all ease-in-out;
-}
-
-.dark-img{
-    filter: invert(100%);
-    transform: rotate(180deg);
-    transition: .5s all ease-in-out;
-}
-
 
 @keyframes pageLoad {
     from {
@@ -36,62 +23,131 @@
     }
 }
 
-/* Top Info Section */
+/* Tools top and menu */
+
 .top-info {
     width: 100%;
     display: flex;
     color: var(--mainfont);
-    justify-content: space-between;
+    align-items: start;
     font-family: var(--font);
     font-size: 1.1rem;
     font-weight: bold;
-    opacity: 0;
-    animation: slideFromLeft .5s ease-out forwards;
-    animation-delay: 0.5s;
 }
 
-@keyframes slideFromLeft {
-    from {
+.options{
+    padding-left: 2rem;
+    display: flex;
+    min-height: 8rem;
+    align-items: center;
+    transition: all .5s;
+}
+
+.rotated{
+    transform: rotate(180deg);
+    transition: all .5s;
+}
+
+.img-sub{
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.light-img, .dark-img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.dark-img{
+    filter: invert(100%);
+}
+
+.menu-open{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--middletrans);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: .5rem;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    animation: appear .5s ease-in-out both;
+}
+
+@keyframes appear{
+    0%{
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-5rem);
     }
-    to {
+    50%{
+        transform: translateX(0rem);
+    }
+    to{
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0rem);
     }
+}
+
+.option{
+    cursor: pointer;
 }
 
 /* Skills List */
-.skills ul {
+
+.skills {
+    width: 100%;
+    font-family: "Boldonse", system-ui;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    width: calc( var(--width) * var(--quantity) );
+    /* background-color: aqua; */
     list-style: none;
-    padding-right: 1rem;
     margin: 0;
+    padding: 0;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10% 90%,
+        transparent
+    );
 }
 
-.skills li {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-out forwards;
-    animation-delay: .5s;
+.skills .slider .item {
+    background-color: var(--middle);
+    padding: .5rem 0rem;
+    position: absolute;
+    font-size: 1.2rem;
+    width: var(--width);
+    text-align: center;
+    left: 100%; 
+    animation: autoRun 17s linear infinite;
+    animation-delay: calc( (17 / var(--quantity)) * ( var(--pos) ) * -1s );
+}
+ 
+@keyframes autoRun {
+    from{
+        left: 100%;
+    }
+    to{
+        left: calc( var(--width) * -1 )
+    }
 }
 
-.skills li:nth-child(1) {
-    animation-delay: 1.2s;
+.skills .slider .item:hover{
+    color: var(--font);
+    transform: scale(102%);
+    transition: all .5s;
 }
 
-.skills li:nth-child(2) {
-    animation-delay: 1.4s;
-}
-
-.skills li:nth-child(3) {
-    animation-delay: 1.6s;
-}
-
-.skills li:nth-child(4) {
-    animation-delay: 1.8s;
-}
-
-.skills li:nth-child(5) {
-    animation-delay: 2s;
+.slider:hover .item{
+    animation-play-state: paused !important;
 }
 
 @keyframes fadeIn {
@@ -103,26 +159,6 @@
     }
 }
 
-/* Theme Toggle */
-.other-tools {
-    padding: .3rem;
-    color: var(--mainfont);
-}
-
-.theme {
-    font-size: 1rem;
-    width: fit-content;
-    border-radius: .3rem;
-    /* border: .1rem solid var(--middle); */
-    padding: .3rem;
-    cursor: pointer;
-    opacity: 0;
-    animation: fadeIn .5s ease-out forwards;
-}
-
-/* .theme:hover {
-    box-shadow: .2rem .2rem .5rem var(--middle);
-} */
 
 /* My Name */
 .my-name {
@@ -184,12 +220,13 @@
 
 @media screen and ( max-width:1025px ) 
 {
-    .top-info{
-        display: none;
-    }
 
     .my-name p{
         font-size: 7rem;
+    }
+
+    .skills , .slider , .item{
+        display: none;
     }
 }
 
@@ -232,4 +269,3 @@
         bottom: 10rem;
     }
 }
-

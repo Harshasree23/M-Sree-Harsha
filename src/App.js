@@ -45,10 +45,10 @@ function App() {
         return  <>
                 <div className={`app ${isDarkMode ? 'dark-theme' : ''}`} >
                   <Cursor/>
+                  {/* <Game /> */}
                   <Home toggleTheme={toggleTheme}  isDarkMode={isDarkMode} />
                   <About />
                   <Stack setPage={setPage} setPageData={setPageData} />
-                  {/* <Exp /> */}
                   <Certifications />
                   <Badges />
                   <Contact />

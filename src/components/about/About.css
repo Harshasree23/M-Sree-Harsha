@@ -1,13 +1,12 @@
 .about {
     display: none;
-    /* height: auto;
-    min-height: 70vh;
-    margin: 2rem 0rem;
+    height: auto;
+    margin: 7rem 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    text-align: center; */
+    text-align: center;
 }
 
 
@@ -26,6 +25,7 @@
     content: "";
     position: absolute;
     inset: 0;
+    
     background-color: var(--rare);
     background-image: repeating-linear-gradient(
         135deg,
@@ -34,7 +34,7 @@
         transparent 2px,
         transparent 10px
     );
-    mix-blend-mode: multiply; /* Blends better in light mode */
+    backdrop-filter: blur(10px);
     z-index: -1;
 }
 
@@ -44,6 +44,7 @@
 }
 
 .my-skills {
+    display: none;
     font-family: var(--font);
     color: var(--opp);
     margin-top: 1.5rem;
@@ -92,5 +93,9 @@
         align-items: center;
         justify-content: space-around;
         text-align: center;
+    }
+
+    .my-skills{
+        display: block;
     }
 }

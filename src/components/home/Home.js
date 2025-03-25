@@ -1,30 +1,49 @@
+import { useState } from 'react';
 import './Home.css';
-import Clock from "../clock/Clock";
 
 const Home = (props) => {  
+
+    const [settings,setSettings] = useState(false);
+    const [rotated, setRotated] = useState(false);
+
 
     return(
         <>
             <div className="home-page">
+
                 <div className="top-info" >
-                    <Clock />
-                    <div className="my-desc" >
-                        <p> I am a computer science enthusiastic exploring differnent technologies around </p>
-                    </div>
-                    <div className="skills" >
-                        <ul>
-                            <li>MERN Developer</li>
-                            <li>Version Control</li>
-                            <li>UI / UX</li>
-                            <li>Data Bases</li>
-                            <li>DSA</li>
-                        </ul>
-                    </div>
+                    <div className='options'>
+                        <div onClick={ () =>{ setSettings(!settings); setRotated(!rotated) } }className={`option ${rotated ? 'rotated' : ''}`}  >
+                            <img src='settings.png' className={ props.isDarkMode ? 'dark-img' : 'light-img' } alt='settings' />
+                        </div>
+
+                        {
+                            settings ? 
+                            <>
+                            <div className='menu-open'>
+                                <div onClick={props.toggleTheme} className='option'>
+                                    {
+                                        props.isDarkMode ? 
+                                        <img src='light_mode.png' className={ props.isDarkMode ? 'dark-img' : 'light-img' } alt='light mode' /> :
+                                        <img src='dark_mode.png' className={ props.isDarkMode ? 'dark-img' : 'light-img' } alt='dark mode' />
+                                    }
+                                </div>
+                            </div>
+                            </> :
+                            <></>
+                        }  
+                    </div>    
                 </div>
+                 
                 
-                <div className='other-tools' >
-                    <div onClick={props.toggleTheme} className='theme'>
-                        <img src='theme.png' className={ props.isDarkMode ? 'dark-img' : 'light-img' } alt='theme' /> 
+                <div className="skills" style={{ "--width":"250px" }}>
+                    <div className='slider' style={{ "--quantity":"6" }}>
+                        <div className='item' style={{ "--pos": "1" }}>MERN Developer</div>
+                        <div className='item' style={{ "--pos": "2" }}>Version Control</div>
+                        <div className='item' style={{ "--pos": "3" }}>UI / UX Design</div>
+                        <div className='item' style={{ "--pos": "4" }}>React Native</div>
+                        <div className='item' style={{ "--pos": "5" }}>API Testing</div>
+                        <div className='item' style={{ "--pos": "6" }}>Data Structures</div>
                     </div>
                 </div>
 

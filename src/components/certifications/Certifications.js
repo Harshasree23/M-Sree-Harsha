@@ -98,12 +98,6 @@ const Certifications = () => {
                                                 ))}
                                             </div>
                                             <div className="certi-desc">{item.description}</div>
-                                            <div className='verify'>
-                                                <a target='_blank' rel="noreferrer" href={item.verify}>
-                                                    Verify
-                                                    <img src='open_in_new.png' alt="open in new" />
-                                                </a>
-                                            </div>
                                         </div>
                                     )}
                                 </InView>
