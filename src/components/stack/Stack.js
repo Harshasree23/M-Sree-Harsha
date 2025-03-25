@@ -98,7 +98,7 @@ const Stack = (props) => {
                                     <div className="project-name">{item.projectName}</div>
                                     <div className="project-img">
                                         <div className="project-images" style={{ gridArea: "img1" }}>
-                                            <img src={item.images[0]} alt={item.images[0]} />
+                                                <img src={item.images[0]} alt={item.projectName} />
                                         </div>
                                     </div>
                                 </div>

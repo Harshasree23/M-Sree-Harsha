@@ -12,6 +12,7 @@ import DsmartProject from './components/dsmartProject/dsmartProject';
 // import Exp from './components/exp/Exp';
 import Certifications from './components/certifications/Certifications';
 import About from './components/about/About';
+import TagFlowProject from './components/tagflowProject/tagflowProjecct';
 
 
 function App() {
@@ -67,6 +68,13 @@ function App() {
                     <Cursor />
                     <HapiProject setPage={setPage} data={pageData} />
                 </div> 
+               </>
+      case "Tag Flow":
+        return <>
+                <div className={`app ${isDarkMode ? 'dark-theme' : ''}`}>
+                    <Cursor />
+                    <TagFlowProject setPage={setPage} data={pageData} />
+                </div>
                </>
       case "D-SMART":
         return <>
