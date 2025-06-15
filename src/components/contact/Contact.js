@@ -7,7 +7,7 @@ const Contact = () => {
                     
                     <img src='my-logo.png' alt="My Logo" className="my-logo" />
                     
-                    <div className="address">
+                    {/* <div className="address">
                         <p style={{paddingLeft:"2rem"}}>
                             Rami Reddy Tata street
                         </p>
@@ -15,7 +15,7 @@ const Contact = () => {
                         <p style={{paddingLeft:"2rem"}} >Kurnool</p>
                         <p style={{paddingLeft:"2rem"}} >Andhra Pradesh</p>
                         <p style={{paddingLeft:"2rem"}} >India</p>
-                    </div>
+                    </div> */}
 
                     <div style={{ display:"flex" , flexDirection:"column" , justifyContent:"space-between" }} >
 
